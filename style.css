@@ -1,0 +1,403 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(circle at top left, #172554, transparent 40%),
+        radial-gradient(circle at bottom right, #0f766e, transparent 40%),
+        #020617;
+
+    padding: 20px;
+}
+
+
+/* ================================
+   QUIZ BOX
+================================ */
+
+#Qbox {
+    width: 100%;
+    max-width: 650px;
+
+    min-height: 520px;
+
+    padding: 40px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    color: #0f172a;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.45),
+        0 0 30px rgba(14, 165, 233, 0.15);
+
+    display: flex;
+    flex-direction: column;
+
+    transition: 0.3s ease;
+}
+
+
+/* ================================
+   QUESTION
+================================ */
+
+#questions {
+    font-size: 28px;
+    line-height: 1.4;
+
+    margin-bottom: 35px;
+
+    color: #0f172a;
+}
+
+
+/* ================================
+   OPTIONS
+================================ */
+
+.options {
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+
+    flex: 1;
+}
+
+
+/* Option container */
+
+.options label {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 16px 18px;
+
+    border: 2px solid #e2e8f0;
+
+    border-radius: 14px;
+
+    background-color: #f8fafc;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Hover */
+
+.options label:hover {
+    background-color: #eff6ff;
+
+    border-color: #38bdf8;
+
+    transform: translateX(5px);
+
+    box-shadow: 0 5px 15px rgba(14, 165, 233, 0.12);
+}
+
+/* Selected option (checked radio's parent label) */
+
+.options label:has(input:checked) {
+    background-color: #eff6ff;
+    border-color: #0284c7;
+}
+
+
+/* Radio button */
+
+.options input[type="radio"] {
+    width: 19px;
+    height: 19px;
+
+    accent-color: #0284c7;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+}
+
+
+/* Option text */
+
+.options span,
+.options h5 {
+    font-size: 19px;
+
+    font-weight: 600;
+
+    color: #1e293b;
+
+    margin: 0;
+}
+
+
+/* ================================
+   BUTTON SECTION
+================================ */
+
+.button {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+
+/* ================================
+   BUTTONS
+================================ */
+
+.main-button {
+    border: none;
+
+    padding: 12px 24px;
+
+    border-radius: 10px;
+
+    background: #0f172a;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Hover */
+
+.main-button:hover {
+    background: #0284c7;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 18px rgba(2, 132, 199, 0.3);
+}
+
+
+/* Click */
+
+.main-button:active {
+    transform: translateY(0);
+
+    box-shadow: none;
+}
+
+/* Disabled */
+
+.main-button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* ================================
+   RESULTS PAGE
+================================ */
+
+#resultPage {
+    width: 100%;
+    max-width: 650px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 28px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    color: #0f172a;
+}
+
+#resultPage h1 {
+    font-size: 32px;
+    margin: 0;
+    color: #0f172a;
+}
+
+.resultContainer {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.scoreInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.scoreInfo p {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    color: #1e293b;
+}
+
+.scoreInfo span {
+    color: #0284c7;
+    font-weight: 700;
+}
+
+.chartContainer {
+    width: 200px;
+    height: 200px;
+}
+
+#resultPage .main-button {
+    margin-top: 20px;
+    padding: 14px 32px;
+    font-size: 16px;
+}
+
+
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 15px;
+    }
+
+    #Qbox {
+        min-height: 500px;
+
+        padding: 25px;
+
+        border-radius: 22px;
+    }
+
+    #questions {
+        font-size: 23px;
+
+        margin-bottom: 25px;
+    }
+
+    .options {
+        gap: 12px;
+    }
+
+    .options label {
+        padding: 14px;
+
+        gap: 12px;
+    }
+
+    .options span,
+    .options h5 {
+        font-size: 17px;
+    }
+
+    .button {
+        margin-top: 25px;
+
+        gap: 8px;
+    }
+
+    .main-button {
+        padding: 10px 16px;
+
+        font-size: 12px;
+    }
+}
+
+
+/* ================================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 420px) {
+
+    #Qbox {
+        padding: 20px;
+
+        min-height: 480px;
+    }
+
+    #questions {
+        font-size: 20px;
+    }
+
+    .options label {
+        padding: 12px;
+    }
+
+    .options span,
+    .options h5 {
+        font-size: 15px;
+    }
+
+    .button {
+        gap: 6px;
+    }
+
+    .main-button {
+        padding: 9px 12px;
+
+        font-size: 11px;
+    }
+
+    #resultPage {
+        padding: 20px;
+    }
+
+    #resultPage h1 {
+        font-size: 24px;
+    }
+
+    .resultContainer {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .scoreInfo p {
+        font-size: 15px;
+    }
+
+    .chartContainer {
+        width: 150px;
+        height: 150px;
+    }
+}

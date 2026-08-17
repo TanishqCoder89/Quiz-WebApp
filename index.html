@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QUIZZ</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="Qbox">
+
+        <h1 id="questions">Q1. Who is PM of India?</h1>
+
+        <div class="options">
+
+            <label class="allOptions">
+                <input type="radio" name="answer">
+                <h5 id="option1">Narendra Modi</h5>
+            </label>
+
+            <label class="allOptions">
+                <input type="radio" name="answer">
+                <h5 id="option2">Rahul Gandhi</h5>
+            </label>
+
+            <label class="allOptions">
+                <input type="radio" name="answer">
+                <h5 id="option3">Amit Shah</h5>
+            </label>
+
+            <label class="allOptions">
+                <input type="radio" name="answer">
+                <h5 id="option4">Yogi Adityanath</h5>
+            </label>
+
+        </div>
+
+        <div class="button">
+            <button class="main-button" id="prev">&larr; PREV</button>
+            <button class="main-button" id="clear">CLEAR</button>
+            <button class="main-button" id="submit">SUBMIT &amp; NEXT</button>
+        </div>
+
+    </div>
+
+    <div id="resultPage" style="display:none;">
+
+        <h1>Quiz Completed!</h1>
+
+        <div class="resultContainer">
+
+            <div class="chartContainer">
+                <canvas id="scoreChart"></canvas>
+            </div>
+
+            <div class="scoreInfo">
+                <p>Correct: <span id="correctCount">0</span></p>
+                <p>Wrong: <span id="wrongCount">0</span></p>
+                <p>Score: <span id="scorePercent">0%</span></p>
+            </div>
+
+        </div>
+
+        <button class="main-button" id="restart">RESTART QUIZ</button>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
