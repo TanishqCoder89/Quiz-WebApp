@@ -1,7 +1,8 @@
 # Quiz Web App
 
 A fully functional web-based quiz application built with vanilla JavaScript, HTML, and CSS.
-
+## Live Demo 
+https://tanishqcoder89.github.io/Quiz-WebApp/
 ## Features
 
 - 🎯 **10 Multiple Choice Questions** - General knowledge quiz
