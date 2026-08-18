@@ -120,4 +120,4 @@ No installation required! Just:
 - Dark mode theme
 - Sound effects
 
-
+Made By Tanishq Bobde
